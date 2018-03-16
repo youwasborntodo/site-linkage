@@ -1,0 +1,14 @@
+{
+  "name": "site-linkage",
+  "version": "0.0.0",
+  "description": "省市县区城市数据联动",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "site-linkage linkage"
+  ],
+  "author": "brian-luo",
+  "license": "MIT"
+}
