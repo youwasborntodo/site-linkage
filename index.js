@@ -11,7 +11,20 @@
     // start
     // console.log('start')
     // import address from './data/address.json'
-    const address =  require('./data/address.json')
-    console.log(address)
+    const addressList =  require('./data/address.json')
+    const addressIndex = []
+    addressList.forEach(data => {
+        // console.log(data)
+        addressIndex.push(data.name)
+    })
+    const address = (name) => {
+        if (!name) {
+            return addressList
+        } else {
+            const index = addressIndex.indexOf(name)
+            return addressList[index]
+        }
+    }
+    // console.log(address)
     return address
 }));
