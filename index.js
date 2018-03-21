@@ -16,9 +16,10 @@
     // city 市
     // county 县  //area 区
     // town 镇
-      function address() {
+      function address(arguments) {
         // console.log(this)
         this.province = null;
+        this.provinceList = addressList;
         this.provinceListIndex = [];
         this.city = null;
         this.cityList = null;
@@ -28,37 +29,35 @@
         this.areaListIndex = null;
         this.county = null;
         this.town = null;
-        return addressList;
-        // this.prototype.getData = (data) => {
-        //     if (!province) {
-        //         return addressList
-        //     } else {
-        //         const index = addressIndex.indexOf(name)
-        //         return addressList[index]
-        //     }
+        // if (arguments) {
+        //     console.log(arguments)
+        // } else {
+        //     return addressList;
         // }
+        console.log(this)
+        return this
     }
-            address.__proto__.getProvince = (province) => {
-                console.log('province==>', province)
-            const provinceList = []
-            addressList.forEach(data => {
-                // console.log(data)
-                provinceList.push(data.name)
-            })
-            address.provinceListIndex = provinceList;
-            if (!province) {
-                return addressList;
-            } else {
-                const index = provinceList.indexOf(province);
-                address.province = province;
-                address.cityList = addressList[index].city;
-                return addressList[index].city
-                // const index = addressIndex.indexOf(province);
-                // return addressList[index];
-            }
-
+    address.prototype = {
+     getProvince: (province) => {
+        console.log('province==>', province)
+        const provinceList = []
+        this.province = province;
+        this.provinceList.forE        console.log(this)ach(data => {
+            // console.log(data)
+            provinceList.push(data.name)
+        })
+        this.provinceListIndex = provinceList;
+        if (!province) {
+            console.log('没有输入省名')
+        } else {
+            const index = provinceList.indexOf(province);
+            // this.province = province;
+            this.cityList = this.provinceList[index].city;
+            // return this.provinceList[index].city
         }
-        address.__proto__.getCity = (city) => {
+        return this
+     },
+      getCity: (city) => {
                     console.log('city==>', city)
                     const cityList = []
             if (address.province) {
@@ -78,7 +77,11 @@
                 // 如果没有输入省名，默认返回所有当前
                 return '没有输入省名';
             }
-        }
+      } 
+    }
     // console.log(address)
-    return address
+    // return address
+    // window.$linkage = () => {
+        return new address(arguments)
+    // }
 }));
