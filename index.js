@@ -12,7 +12,6 @@
     // Version: 0.0.0
     // Author by 505072907@qq.com
     // import address from './data/address.json'
-    const addressList =  require('./data/address.json')
     const dataListJSON = {}
 
     dataListJSON[0] =  require('./data/0/data.json')
@@ -67,7 +66,7 @@
 
       function Address() {
         this.province = null;
-        this.provinceList = addressList;
+        this.provinceList = provinceListData;
         this.provinceListIndex = provinceListData;
         this.city = null;
         this.cityList = null;
