@@ -1,7 +1,7 @@
 {
   "name": "site-linkage",
-  "version": "0.0.0",
-  "description": "省市县区城市数据联动",
+  "version": "0.0.1",
+  "description": "中国各省市县区城市JSON数据联动，后期会持续更新，只提供数据，暂不直接提供UI组件",
   "main": "index.js",
   "scripts": {
     "test": "test"
